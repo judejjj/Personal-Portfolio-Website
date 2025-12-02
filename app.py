@@ -27,25 +27,25 @@ def projects():
             'title': 'Thyroid Detection',
             'description': 'Machine learning pipeline that classifies thyroid conditions using clinical datasets, model evaluation, and deployment-ready notebooks.',
             'image': 'https://via.placeholder.com/400x300?text=Thyroid+Detection',
-            'link': 'https://github.com/judejjj/thyroid-detection'
+            'link': 'https://github.com/judejjj/thyroid-disease-detector'
         },
         {
             'title': 'Android To-Do',
             'description': 'Native Android productivity app with task scheduling, reminders, and local persistence built using Kotlin and Jetpack components.',
             'image': 'https://via.placeholder.com/400x300?text=Android+To-Do',
-            'link': 'https://github.com/judejjj/android-todo'
+            'link': 'https://github.com/judejjj/Android-ToDo-App'
         },
         {
             'title': 'Hand Gesture Recognition',
             'description': 'Computer vision project that recognizes hand gestures in real time with OpenCV preprocessing and TensorFlow inference.',
             'image': 'https://via.placeholder.com/400x300?text=Hand+Gesture',
-            'link': 'https://github.com/judejjj/hand-gesture-recognition'
+            'link': 'https://github.com/judejjj/Hand-Gesture-Media-Control'
         },
         {
             'title': 'Online Movie Review',
             'description': 'Full-stack web app that ingests reviews, performs sentiment analysis, and publishes curated movie insights.',
             'image': 'https://via.placeholder.com/400x300?text=Movie+Review',
-            'link': 'https://github.com/judejjj/online-movie-review'
+            'link': 'https://github.com/judejjj/Online-Movie-Review-System'
         }
     ]
     return render_template('projects.html', title='Projects', projects=projects_data)
