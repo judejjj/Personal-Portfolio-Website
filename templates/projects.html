@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="projects-section">
+    <h1 class="page-title">My Projects</h1>
+    <p class="page-subtitle">A selection of my recent work.</p>
+
+    <div class="projects-grid">
+        {% for project in projects %}
+        <article class="project-card">
+            <div class="project-image">
+                <img src="{{ project.image }}" alt="{{ project.title }}">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">{{ project.title }}</h3>
+                <p class="project-description">{{ project.description }}</p>
+                <a href="{{ project.link }}" class="project-link">View Project &rarr;</a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

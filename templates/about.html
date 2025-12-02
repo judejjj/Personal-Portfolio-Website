@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="about-section">
+    <div class="about-content">
+        <h1 class="page-title">About Me</h1>
+        <div class="bio">
+            <p>Hello! I'm Jude Joby Joseph, an MCA Student at Saintgits College of Engineering based in Kerala, India.</p>
+            <p>I am passionate about <strong>Linux</strong>,
+                <strong>AI</strong>, and <strong>Cybersecurity</strong>. I love building efficient backends and
+                exploring the depths of operating systems.
+            </p>
+            <p>When I'm not coding, you can find me exploring new technologies or contributing to the open-source
+                community.</p>
+        </div>
+
+        <div class="skills-section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-list">
+                {% for skill in skills %}
+                <span class="skill-tag">
+                    <span class="skill-icon">{{ skill.icon }}</span>
+                    <span class="skill-name">{{ skill.name }}</span>
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="certifications-section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                {% for cert in certifications %}
+                <div class="cert-card">
+                    <div class="cert-icon">{{ cert.icon }}</div>
+                    <h3 class="cert-name">{{ cert.name }}</h3>
+                    <p class="cert-issuer">{{ cert.issuer }}</p>
+                    <p class="cert-date">{{ cert.date }}</p>
+                    {% if cert.link %}
+                    <a href="{{ cert.link }}" target="_blank" class="cert-link">View Certificate →</a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

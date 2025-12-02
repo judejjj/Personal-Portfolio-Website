@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="contact-section">
+    <h1 class="page-title">Get in Touch</h1>
+    <p class="page-subtitle">Have a question or want to work together?</p>
+
+    <form action="{{ url_for('contact') }}" method="POST" class="contact-form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Your Email">
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+
+    <div class="contact-alternative">
+        <p class="alternative-text">Or connect with me on LinkedIn:</p>
+        <a href="https://www.linkedin.com/in/judejobyjoseph/" target="_blank" class="btn btn-secondary">
+            Visit LinkedIn Profile
+        </a>
+    </div>
+</section>
+{% endblock %}

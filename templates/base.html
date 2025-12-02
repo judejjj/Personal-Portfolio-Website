@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %} - My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="logo">#Jude</a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="{{ url_for('home') }}"
+                            class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">Home</a></li>
+                    <li><a href="{{ url_for('projects') }}"
+                            class="nav-link {% if request.endpoint == 'projects' %}active{% endif %}">Projects</a></li>
+                    <li><a href="{{ url_for('about') }}"
+                            class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">About</a></li>
+                    <li><a href="{{ url_for('contact') }}"
+                            class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">Contact</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                <div class="flash-message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; {{ 2025 }} Jude Joby Joseph. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/judejjj" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/judejobyjoseph/" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/lordwitch777" target="_blank">Twitter</a>
+                <a href="https://instagram.com/jude._.joby._.joseph" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
